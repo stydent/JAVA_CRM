@@ -16,37 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.vladlink.crm.service.ClientService;
 
 
-@SpringBootApplication
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class CrmApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CrmApplication.class, args);
     }
 
-    @Controller
-    public static class ClientController {
-        private ClientService clientService;
 
-        @Autowired
-        public void setClientService(ClientService clientService) {
-            this.clientService = clientService;
-        }
-
-        
-/*
-        @GetMapping("/")
-        public String list(Model model) {
-            return "index";
-        }*/
-
-        @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
-        public String index(Model model) {
-
-            //model.addAttribute("message", message);
-
-            return "index";
-        }
-
-    }
 }

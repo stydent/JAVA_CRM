@@ -5,7 +5,9 @@ import ru.vladlink.crm.entity.Client;
 import java.util.List;
 
 public interface ClientService {
-    public Client getClientById(int id);
+    Client getClientById(int id);
+    void removeClient(int id);
     void addClient(Client client);
-    public List<Client> listClients();
+    void updateClient(Client client);
+    List<Client> getClientsByAddress();
 }

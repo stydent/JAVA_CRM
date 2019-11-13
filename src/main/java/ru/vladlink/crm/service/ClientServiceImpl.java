@@ -24,13 +24,24 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     @Transactional
+    public void removeClient(int id) {
+        this.clientRepository.removeClient(id);
+    }
+
+    @Override
+    @Transactional
     public void addClient(Client client) {
         this.clientRepository.addClient(client);
     }
 
     @Override
     @Transactional
-    public List<Client> listClients() {
-        return this.clientRepository.listClients();
+    public void updateClient(Client client) {
+        this.clientRepository.updateClient(client);
+    }
+
+    @Override
+    public List<Client> getClientsByAddress() {
+        return this.clientRepository.getClientsByAddress();
     }
 }
