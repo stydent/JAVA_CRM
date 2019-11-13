@@ -18,9 +18,6 @@ import ru.vladlink.crm.service.ClientService;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@Configuration
-@ComponentScan
-//@EnableAutoConfiguration
 public class CrmApplication {
 
     public static void main(String[] args) {
@@ -36,23 +33,7 @@ public class CrmApplication {
             this.clientService = clientService;
         }
 
-        /*@RequestMapping(value = "clients", method = RequestMethod.GET)
-        public String list(Model model){
-            model.addAttribute("clients",new Client());
-            model.addAttribute("listClients", this.clientService.listClients());
-            return "clients";
-        }*/
-
-       /* @GetMapping("/")
-        public String list(ModelMap model) {
-            return "index";
-        }*/
-
-        /*@RequestMapping(value = "/", method = RequestMethod.GET)
-        public String list(ModelMap model) {
-
-            return "index";
-        }*/
+        
 /*
         @GetMapping("/")
         public String list(Model model) {
