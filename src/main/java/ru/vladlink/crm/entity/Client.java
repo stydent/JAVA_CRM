@@ -8,12 +8,16 @@ public class Client {
     @Id
     @GeneratedValue
     private int id;
+
     @Column(name = "fio")
     String fio;
+
     @Column(name = "address")
     String address;
+
     @Column(name="manager")
     int manager;
+
     @Column(name="status")
     int status;
 
@@ -22,10 +26,6 @@ public class Client {
         this.address = address;
         this.manager = manager;
         this.status = status;
-    }
-
-    public Client() {
-
     }
 
     public int getId() {

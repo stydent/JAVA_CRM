@@ -9,5 +9,5 @@ public interface ClientService {
     void removeClient(int id);
     void addClient(Client client);
     void updateClient(Client client);
-    List<Client> getClientsByAddress();
+    List<Client> findAll();
 }

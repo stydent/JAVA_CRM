@@ -1,5 +1,6 @@
 package ru.vladlink.crm.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.vladlink.crm.entity.Client;
 import ru.vladlink.crm.repository.ClientRepository;
@@ -10,9 +11,11 @@ import java.util.List;
 @Service
 public class ClientServiceImpl implements ClientService {
 
-    private ClientRepository clientRepository;
 
-    public void setClientRepository(ClientRepository clientRepository) {
+    @Autowired
+    private final ClientRepository clientRepository;
+
+    public ClientServiceImpl(ClientRepository clientRepository){
         this.clientRepository = clientRepository;
     }
 
@@ -41,7 +44,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<Client> getClientsByAddress() {
-        return this.clientRepository.getClientsByAddress();
+    public List<Client> findAll() {
+        return this.clientRepository.findAll();
     }
 }
