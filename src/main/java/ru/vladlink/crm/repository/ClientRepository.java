@@ -8,11 +8,8 @@ import ru.vladlink.crm.entity.Client;
 
 import java.util.List;
 
+@Repository
+public interface ClientRepository{
 
-public interface ClientRepository extends JpaRepository<Client,Long>{
-    Client getClientById(int id);
-    void removeClient(int id);
-    void addClient(Client client);
-    void updateClient(Client client);
     List<Client> findAll();
 }

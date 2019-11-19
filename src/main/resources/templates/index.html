@@ -6,6 +6,9 @@
 <div class="container">
     <p>Текст в шаблоне</p>
     <p th:text="${text}"></p>
+    <div th:each="note : ${clients}">
+        <td th:text="${note.fio}"></td>
+    </div>
 </div>
 </body>
 </html>
