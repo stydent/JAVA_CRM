@@ -21,12 +21,12 @@ public class Client {
     @Column(name="status")
     int status;
 
-    public Client(String fio, String address, int manager, int status) {
+    /*public Client(String fio, String address, int manager, int status) {
         this.fio = fio;
         this.address = address;
         this.manager = manager;
         this.status = status;
-    }
+    }*/
 
     public int getId() {
         return id;
