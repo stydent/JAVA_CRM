@@ -2,9 +2,9 @@ package ru.vladlink.crm.service;
 
 
 import ru.vladlink.crm.entity.Client;
-import ru.vladlink.crm.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.vladlink.crm.repository.ClientRepository;
 
 
 import java.util.List;
@@ -12,6 +12,7 @@ import java.util.List;
 public class ClientServiceImpl implements ClientService {
 
 
+    @Autowired(required=true)
     private ClientRepository repository;
 
 

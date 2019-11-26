@@ -7,7 +7,10 @@ import ru.vladlink.crm.entity.Client;
 
 import java.util.List;
 
+@Repository
+public interface ClientRepository extends JpaRepository<Client, Integer> {
 
-public interface ClientRepository extends JpaRepository<Client,Integer>{
+    @Override
+    @Autowired(required=true)
     List<Client> findAll();
 }
