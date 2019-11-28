@@ -7,7 +7,7 @@
     <p>Текст в шаблоне</p>
     <p th:text="${text}"></p>
     <div th:each="note : ${clients}">
-        <td th:text="${note.fio}"></td>
+        <td th:utext="${note.fio}"></td>
         <td th:text="${note.address}"></td>
     </div>
 </div>

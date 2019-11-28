@@ -11,18 +11,10 @@ import java.util.List;
 @Service
 public class ClientServiceImpl implements ClientService {
 
-
-    @Autowired(required=true)
-    private ClientRepository repository;
-
-
-    public void setClientRepository(ClientRepository repository) {
-        this.repository = repository;
-    }
-
-
+    @Autowired
+    ClientRepository repository;
     @Override
-    public List<Client> findAll() {
+    public List<Client> getAll() {
         return repository.findAll();
     }
 }
