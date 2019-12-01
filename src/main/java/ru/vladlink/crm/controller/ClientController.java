@@ -1,6 +1,7 @@
 package ru.vladlink.crm.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,7 @@ public class ClientController {
 
     @GetMapping("/")
     public String list(Model model) {
-        List<Client> clients = services.getAll();
+        List<Client> clients = services.getAllInfo();
         model.addAttribute("clients",clients);
         model.addAttribute("text", "Атрибут из компонента");
         return "index";

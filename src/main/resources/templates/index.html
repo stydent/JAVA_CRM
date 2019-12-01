@@ -4,12 +4,27 @@
 <head></head>
 <body>
 <div class="container">
-    <p>Текст в шаблоне</p>
+    <p>Список клиентов</p>
     <p th:text="${text}"></p>
-    <div th:each="note : ${clients}">
-        <td th:utext="${note.fio}"></td>
-        <td th:text="${note.address}"></td>
-    </div>
+    <table>
+        <tr>
+            <td>Фио</td>
+            <td>Адрес</td>
+            <td>Менеджер</td>
+            <td>Заместитель</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr th:each="note : ${clients}">
+            <td th:utext="${note.fio}"></td>
+            <td th:text="${note.address}"></td>
+            <td th:text="${note.manager.managerFio} + ' ' + ${note.manager.phone}"></td>
+            <td th:text="${note.manager.getAssistant(${note.manager.assistant_id})}"></td>
+            <td><a th:href="@{'/client/{id}'(id=${note.id})}">Подробнее</a></td>
+            <td th:text="${note.status}"></td>
+        </tr>
+    </table>
+    <a href="#">Добавить клиента</a>
 </div>
 </body>
 </html>

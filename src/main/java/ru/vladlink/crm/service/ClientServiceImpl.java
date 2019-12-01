@@ -13,8 +13,12 @@ public class ClientServiceImpl implements ClientService {
 
     @Autowired
     ClientRepository repository;
-    @Override
+
     public List<Client> getAll() {
         return repository.findAll();
+    }
+
+    public List<Client> getAllInfo() {
+        return repository.getAllInfo();
     }
 }
