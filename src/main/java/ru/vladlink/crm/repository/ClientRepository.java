@@ -11,9 +11,8 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
 
     //@Query("select c.all, m.all from clients c left join managers m on m.id = client.manager")
     //@Query("SELECT c, m.fio AS mfio FROM Client c left join Manager m on m.id = c.id")
-    @Query("SELECT c,m,m2 FROM Client c " +
-            "left join Manager m on m.id = c.manager_id " +
-            "left join Manager m2 on m2.id = m2.assistant_id")
+    @Query("SELECT c,m FROM Client c " +
+            "left join Manager m on m.id = c.manager_id ")
     //@Query("SELECT c FROM Client c")
     List<Client> getAllInfo();
 }
