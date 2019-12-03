@@ -23,7 +23,7 @@ public class ClientController {
 
     @GetMapping("/")
     public String list(Model model) {
-        List<Client> clients = services.getAllInfo();
+        List<Client> clients = services.getAll();
         model.addAttribute("clients",clients);
         model.addAttribute("text", "Атрибут из компонента");
         return "index";

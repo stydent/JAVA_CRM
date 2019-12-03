@@ -19,7 +19,7 @@
             <td th:utext="${note.fio}"></td>
             <td th:text="${note.address}"></td>
             <td th:text="${note.manager.managerFio} + ' ' + ${note.manager.phone}"></td>
-            <td th:text="${note.manager.getAssistant(${note.manager.assistant_id})}"></td>
+            <td th:text="${note.manager.assistant.managerFio} + ' ' + ${note.manager.assistant.phone}"></td>
             <td><a th:href="@{'/client/{id}'(id=${note.id})}">Подробнее</a></td>
             <td th:text="${note.status}"></td>
         </tr>

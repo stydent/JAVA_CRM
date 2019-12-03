@@ -8,7 +8,7 @@ import java.util.List;
 public class Client {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "id", updatable=false, nullable=false)
     public Integer id;
 
     @Column(name = "fio")
@@ -23,39 +23,49 @@ public class Client {
     @Column(name = "status")
     public Integer status;
 
-
-    public void setFio(String fio) {
-        this.fio = fio;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    @OneToOne (optional=false, cascade=CascadeType.ALL)
+    @JoinColumn (name="manager_id")
+    private Manager manager;
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFio() {
         return fio;
     }
 
+    public void setFio(String fio) {
+        this.fio = fio;
+    }
+
     public String getAddress() {
         return address;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manager_id")
-    private Manager manager;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(Integer manager_id) {
+        this.manager_id = manager_id;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Manager getManager() {
         return manager;
@@ -64,10 +74,4 @@ public class Client {
     public void setManager(Manager manager) {
         this.manager = manager;
     }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-
 }

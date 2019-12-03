@@ -6,9 +6,10 @@ import java.util.List;
 @Entity
 @Table(name="managers")
 public class Manager {
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "id", updatable=false, nullable=false)
     public Integer id;
 
     @Column(name = "fio")
@@ -17,38 +18,20 @@ public class Manager {
     @Column(name = "phone")
     public String phone;
 
-    @Column(name = "assistant_id")
+    @Column(name = "assistant_id", insertable = false, updatable = false)
     public Integer assistant_id;
 
-    public String getAssistant(Integer manager){
-        if(manager==1) return "1111";
-        else return "6666";
+    @OneToOne
+    @JoinColumn (name="assistant_id")
+    private Manager assistant;
+
+    public Manager getAssistant() {
+        return assistant;
     }
 
-    public List<Client> getClient() {
-        return client;
+    public void setAssistant(Manager assistant) {
+        this.assistant = assistant;
     }
-
-    public void setClient(List<Client> client) {
-        this.client = client;
-    }
-
-    @OneToMany(
-            mappedBy = "manager",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<Client> client;
-
-    public List<Client> getClients() {
-        return client;
-    }
-
-    public void setClients(List<Client> clients) {
-        this.client = clients;
-    }
-/*@OneToMany(mappedBy="manager")
-    private List<Client> client;*/
 
     public Integer getId() {
         return id;
@@ -58,12 +41,28 @@ public class Manager {
         this.id = id;
     }
 
+    public String getManagerFio() {
+        return managerFio;
+    }
+
+    public void setManagerFio(String managerFio) {
+        this.managerFio = managerFio;
+    }
+
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Integer getAssistant_id() {
+        return assistant_id;
+    }
+
+    public void setAssistant_id(Integer assistant_id) {
+        this.assistant_id = assistant_id;
     }
 
 }

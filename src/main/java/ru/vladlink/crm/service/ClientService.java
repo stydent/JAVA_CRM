@@ -9,5 +9,4 @@ public interface ClientService {
 
     List<Client> getAll();
 
-    List<Client> getAllInfo();
 }

@@ -17,8 +17,4 @@ public class ClientServiceImpl implements ClientService {
     public List<Client> getAll() {
         return repository.findAll();
     }
-
-    public List<Client> getAllInfo() {
-        return repository.getAllInfo();
-    }
 }
