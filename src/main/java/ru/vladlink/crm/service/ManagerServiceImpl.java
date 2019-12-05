@@ -1,10 +1,10 @@
 package ru.vladlink.crm.service;
 
 
-import ru.vladlink.crm.entity.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.vladlink.crm.repository.ClientRepository;
+import ru.vladlink.crm.entity.Manager;
+import ru.vladlink.crm.repository.ManagerRepository;
 
 
 import java.util.List;
@@ -12,9 +12,9 @@ import java.util.List;
 public class ManagerServiceImpl implements ManagerService {
 
     @Autowired
-    ClientRepository repository;
-    @Override
-    public List<Client> getAll() {
-        return repository.findAll();
+    ManagerRepository repository;
+
+    public List<Manager> getAll() {
+        return repository.findManagerByStatus(1);
     }
 }

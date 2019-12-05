@@ -15,6 +15,24 @@ public class ClientServiceImpl implements ClientService {
     ClientRepository repository;
 
     public List<Client> getAll() {
-        return repository.findAll();
+        return repository.findClientByStatus(1);
+    }
+
+    public Client getOne(int id) {
+        return repository.findClientById(id);
+    }
+
+    public void removeClient(int id){
+        Client client = repository.findClientById(id);
+        client.status = 0;
+        repository.save(client);
+    }
+
+    public void saveClient(int id, String fio, String address, int manager_id){
+        Client client = repository.findClientById(id);
+        client.setFio(fio);
+        client.setAddress(address);
+        client.setManager_id(manager_id);
+        repository.save(client);
     }
 }

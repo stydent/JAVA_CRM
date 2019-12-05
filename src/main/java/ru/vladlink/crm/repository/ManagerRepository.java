@@ -7,6 +7,6 @@ import ru.vladlink.crm.entity.Manager;
 
 import java.util.List;
 
-public interface ManagerRepository extends JpaRepository<Client, Integer> {
-
+public interface ManagerRepository extends JpaRepository<Manager, Integer> {
+    List<Manager> findManagerByStatus(Integer status);
 }

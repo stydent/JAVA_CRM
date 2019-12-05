@@ -14,4 +14,7 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
     //@Query("SELECT c,m FROM Client c left join Manager m on m.id = c.manager_id ")
     //@Query("SELECT c FROM Client c")
     //List<Client> getAll();
+    List<Client> findClientByStatus(Integer status);
+    Client findClientById(Integer id);
+
 }

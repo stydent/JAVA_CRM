@@ -5,7 +5,6 @@
 <body>
 <div class="container">
     <p>Список клиентов</p>
-    <p th:text="${text}"></p>
     <table>
         <tr>
             <td>Фио</td>
@@ -13,15 +12,15 @@
             <td>Менеджер</td>
             <td>Заместитель</td>
             <td></td>
-            <td></td>
+
         </tr>
         <tr th:each="note : ${clients}">
             <td th:utext="${note.fio}"></td>
             <td th:text="${note.address}"></td>
             <td th:text="${note.manager.managerFio} + ' ' + ${note.manager.phone}"></td>
-            <td th:text="${note.manager.assistant.managerFio} + ' ' + ${note.manager.assistant.phone}"></td>
+            <td th:text="${note.manager.assistant != null}? ${note.manager.assistant.managerFio}+ ' ' + ${note.manager.assistant.phone} :' - ' "></td>
             <td><a th:href="@{'/client/{id}'(id=${note.id})}">Подробнее</a></td>
-            <td th:text="${note.status}"></td>
+
         </tr>
     </table>
     <a href="#">Добавить клиента</a>

@@ -1,9 +1,9 @@
 package ru.vladlink.crm.service;
 
-import ru.vladlink.crm.entity.Client;
+import ru.vladlink.crm.entity.Manager;
 
 import java.util.List;
 
 public interface ManagerService {
-    List<Client> getAll();
+    List<Manager> getAll();
 }

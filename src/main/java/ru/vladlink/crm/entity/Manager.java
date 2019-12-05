@@ -21,6 +21,9 @@ public class Manager {
     @Column(name = "assistant_id", insertable = false, updatable = false)
     public Integer assistant_id;
 
+    @Column(name = "status")
+    public Integer status;
+
     @OneToOne
     @JoinColumn (name="assistant_id")
     private Manager assistant;

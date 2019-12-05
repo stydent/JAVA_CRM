@@ -20,7 +20,7 @@ public class Client {
     @Column(name = "manager_id", insertable = false, updatable = false)
     public Integer manager_id;
 
-    @Column(name = "status")
+    @Column(name = "status",nullable = false)
     public Integer status;
 
     @OneToOne (optional=false, cascade=CascadeType.ALL)
