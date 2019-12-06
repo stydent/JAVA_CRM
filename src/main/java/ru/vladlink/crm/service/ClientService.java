@@ -11,4 +11,5 @@ public interface ClientService {
     Client getOne(int id);
     void removeClient(int id);
     void saveClient(int id, String fio, String address, int manager_id);
+    void addClient(String fio, String address, Integer manager_id);
 }

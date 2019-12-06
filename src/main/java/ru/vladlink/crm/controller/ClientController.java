@@ -53,6 +53,16 @@ public class ClientController {
         return "client";
     }
 
+    @GetMapping("/clientAdd/")
+    public String clientNew(Model model){
+        List<Manager> managers = servicesManager.getAll();
+        Client client = new Client();
+        model.addAttribute("client", client);
+        model.addAttribute("newC", true);
+        model.addAttribute("managers", managers);
+        return "client";
+    }
+
     @GetMapping("/removeClient/{id}")
     public String removeClient(@PathVariable("id") int id){
         servicesClient.removeClient(id);
@@ -63,6 +73,12 @@ public class ClientController {
     public String updateClient(@RequestParam Integer id, @RequestParam String fio, @RequestParam String address, @RequestParam Integer manager_id){
         servicesClient.saveClient(id, fio, address, manager_id);
         return "redirect:";
+    }
+
+    @PostMapping("/addClient")
+    public String addClient(@RequestParam String fio, @RequestParam String address, @RequestParam Integer manager_id){
+        servicesClient.addClient(fio, address, manager_id);
+        return "redirect:/";
     }
 
 }

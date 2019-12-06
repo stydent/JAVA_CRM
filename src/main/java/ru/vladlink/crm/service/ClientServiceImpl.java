@@ -32,7 +32,17 @@ public class ClientServiceImpl implements ClientService {
         Client client = repository.findClientById(id);
         client.setFio(fio);
         client.setAddress(address);
+        client.setId(manager_id);
+        repository.save(client);
+    }
+
+
+    public void addClient(String fio, String address, Integer manager_id) {
+        Client client = new Client(fio, address, manager_id);
+        /*client.setFio(fio);
+        client.setAddress(address);
         client.setManager_id(manager_id);
+        client.setStatus(1);*/
         repository.save(client);
     }
 }

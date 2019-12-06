@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name="clients")
 public class Client {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", updatable=false, nullable=false)
     public Integer id;
 
@@ -17,8 +17,16 @@ public class Client {
     @Column(name = "address")
     public String address;
 
-    @Column(name = "manager_id", insertable = false, updatable = false)
+    @Column(name = "manager_id", nullable = false, insertable = false, updatable = false)
     public Integer manager_id;
+
+    public Integer getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(Integer manager_id) {
+        this.manager_id = manager_id;
+    }
 
     @Column(name = "status",nullable = false)
     public Integer status;
@@ -51,13 +59,7 @@ public class Client {
         this.address = address;
     }
 
-    public Integer getManager_id() {
-        return manager_id;
-    }
 
-    public void setManager_id(Integer manager_id) {
-        this.manager_id = manager_id;
-    }
 
     public Integer getStatus() {
         return status;
@@ -73,5 +75,13 @@ public class Client {
 
     public void setManager(Manager manager) {
         this.manager = manager;
+    }
+
+    public Client(){}
+    public Client(String fio, String address, Integer manager_id) {
+        this.fio = fio;
+        this.address = address;
+        this.setManager_id(manager_id);
+        this.status = 1;
     }
 }
