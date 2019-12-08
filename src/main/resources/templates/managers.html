@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div class="container">
+    <p><a href="/">Список клиентов</a> <b>Список менеджеров</b></p>
+    <table>
+        <tr>
+            <td>Фио</td>
+            <td>Телефон</td>
+            <td>Заместитель</td>
+            <td>Телефон</td>
+            <td></td>
+
+        </tr>
+        <tr th:each="note : ${managers}">
+            <td th:utext="${note.managerFio}"></td>
+            <td th:text="${note.phone}"></td>
+            <td th:text="${note.assistant != null}? ${note.assistant.managerFio} :' - ' "></td>
+            <td th:text="${note.assistant != null}? ${note.assistant.phone} :' - ' "></td>
+            <td><a th:href="@{'/manager/{id}'(id=${note.managerID})}">Подробнее</a></td>
+
+        </tr>
+    </table>
+    <a href="/managerAdd/">Добавить менеджера</a>
+</div>
+</body>
+</html>

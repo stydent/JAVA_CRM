@@ -1,14 +1,15 @@
 package ru.vladlink.crm.entity;
 
+import ru.vladlink.crm.repository.ManagerRepository;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name="clients")
 public class Client {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id", updatable=false, nullable=false)
+    @Column(name = "id")
     public Integer id;
 
     @Column(name = "fio")
@@ -17,23 +18,21 @@ public class Client {
     @Column(name = "address")
     public String address;
 
-    @Column(name = "manager_id", nullable = false, insertable = false, updatable = false)
-    public Integer manager_id;
-
-    public Integer getManager_id() {
-        return manager_id;
-    }
-
-    public void setManager_id(Integer manager_id) {
-        this.manager_id = manager_id;
-    }
-
     @Column(name = "status",nullable = false)
     public Integer status;
 
     @OneToOne (optional=false, cascade=CascadeType.ALL)
-    @JoinColumn (name="manager_id")
+    @JoinColumn (name= "manager_id")
     private Manager manager;
+
+    public Client() {
+    }
+    public Client(String fio, String address, Manager manager) {
+        this.fio = fio;
+        this.address = address;
+        this.status = 1;
+        this.manager = manager;
+    }
 
     public Integer getId() {
         return id;
@@ -59,8 +58,6 @@ public class Client {
         this.address = address;
     }
 
-
-
     public Integer getStatus() {
         return status;
     }
@@ -75,13 +72,5 @@ public class Client {
 
     public void setManager(Manager manager) {
         this.manager = manager;
-    }
-
-    public Client(){}
-    public Client(String fio, String address, Integer manager_id) {
-        this.fio = fio;
-        this.address = address;
-        this.setManager_id(manager_id);
-        this.status = 1;
     }
 }

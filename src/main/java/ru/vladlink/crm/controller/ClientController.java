@@ -58,7 +58,7 @@ public class ClientController {
         List<Manager> managers = servicesManager.getAll();
         Client client = new Client();
         model.addAttribute("client", client);
-        model.addAttribute("newC", true);
+        model.addAttribute("newF", true);
         model.addAttribute("managers", managers);
         return "client";
     }

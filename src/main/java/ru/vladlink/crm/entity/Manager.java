@@ -1,7 +1,6 @@
 package ru.vladlink.crm.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name="managers")
@@ -9,17 +8,22 @@ public class Manager {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id", updatable=false, nullable=false)
-    public Integer id;
+    @Column(name = "id")
+    public Integer managerID;
+
+    public Integer getManagerID() {
+        return managerID;
+    }
+
+    public void setManagerID(Integer managerID) {
+        this.managerID = managerID;
+    }
 
     @Column(name = "fio")
     public String managerFio;
 
     @Column(name = "phone")
     public String phone;
-
-    @Column(name = "assistant_id", insertable = false, updatable = false)
-    public Integer assistant_id;
 
     @Column(name = "status")
     public Integer status;
@@ -36,13 +40,7 @@ public class Manager {
         this.assistant = assistant;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getManagerFio() {
         return managerFio;
@@ -60,12 +58,12 @@ public class Manager {
         this.phone = phone;
     }
 
-    public Integer getAssistant_id() {
-        return assistant_id;
+    public Manager() {
     }
-
-    public void setAssistant_id(Integer assistant_id) {
-        this.assistant_id = assistant_id;
+    public Manager(String managerFio, String phone, Manager assistant) {
+        this.managerFio = managerFio;
+        this.phone = phone;
+        this.status = 1;
+        this.assistant = assistant;
     }
-
 }

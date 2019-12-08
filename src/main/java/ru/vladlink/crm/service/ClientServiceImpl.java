@@ -4,7 +4,9 @@ package ru.vladlink.crm.service;
 import ru.vladlink.crm.entity.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.vladlink.crm.entity.Manager;
 import ru.vladlink.crm.repository.ClientRepository;
+import ru.vladlink.crm.repository.ManagerRepository;
 
 
 import java.util.List;
@@ -12,37 +14,36 @@ import java.util.List;
 public class ClientServiceImpl implements ClientService {
 
     @Autowired
-    ClientRepository repository;
+    ClientRepository repositoryClient;
+
+    @Autowired
+    ManagerRepository repositoryManager;
 
     public List<Client> getAll() {
-        return repository.findClientByStatus(1);
+        return repositoryClient.findClientByStatus(1);
     }
 
     public Client getOne(int id) {
-        return repository.findClientById(id);
+        return repositoryClient.findClientById(id);
     }
 
     public void removeClient(int id){
-        Client client = repository.findClientById(id);
+        Client client = repositoryClient.findClientById(id);
         client.status = 0;
-        repository.save(client);
+        repositoryClient.save(client);
     }
 
-    public void saveClient(int id, String fio, String address, int manager_id){
-        Client client = repository.findClientById(id);
+    public void saveClient(int id, String fio, String address, Integer manager_id){
+        Client client = repositoryClient.findClientById(id);
         client.setFio(fio);
         client.setAddress(address);
-        client.setId(manager_id);
-        repository.save(client);
+        client.setManager(repositoryManager.getOne(manager_id));
+        repositoryClient.save(client);
     }
 
 
     public void addClient(String fio, String address, Integer manager_id) {
-        Client client = new Client(fio, address, manager_id);
-        /*client.setFio(fio);
-        client.setAddress(address);
-        client.setManager_id(manager_id);
-        client.setStatus(1);*/
-        repository.save(client);
+        Client client = new Client(fio, address, repositoryManager.getOne(manager_id));
+        repositoryClient.save(client);
     }
 }
