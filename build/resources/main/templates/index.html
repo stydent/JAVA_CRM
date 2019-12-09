@@ -18,12 +18,12 @@
             <td th:utext="${note.fio}"></td>
             <td th:text="${note.address}"></td>
             <td th:text="${note.manager.managerFio} + ' ' + ${note.manager.phone}"></td>
-            <td th:text="${note.manager.assistant != null}? ${note.manager.assistant.managerFio}+ ' ' + ${note.manager.assistant.phone} :' - ' "></td>
+            <td th:text="${note.manager.assistant.managerID != 0}? ${note.manager.assistant.managerFio}+ ' ' + ${note.manager.assistant.phone} :' - ' "></td>
             <td><a th:href="@{'/client/{id}'(id=${note.id})}">Подробнее</a></td>
 
         </tr>
     </table>
-    <a href="/clientAdd/">Добавить менеджера</a>
+    <a href="/clientAdd/">Добавить клиента</a>
 </div>
 </body>
 </html>

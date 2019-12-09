@@ -10,4 +10,5 @@ public interface ManagerService {
     Manager getOne(int id);
     void saveManager(Integer managerID, String managerFio, String phone, Integer assistant_id);
     void addManager(String managerFio, String phone, Integer assistant_id);
+    void removeManager(int id);
 }

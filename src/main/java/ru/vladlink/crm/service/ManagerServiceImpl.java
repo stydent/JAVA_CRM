@@ -3,7 +3,9 @@ package ru.vladlink.crm.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.vladlink.crm.entity.Client;
 import ru.vladlink.crm.entity.Manager;
+import ru.vladlink.crm.repository.ClientRepository;
 import ru.vladlink.crm.repository.ManagerRepository;
 
 
@@ -12,15 +14,18 @@ import java.util.List;
 public class ManagerServiceImpl implements ManagerService {
 
     @Autowired
-    ManagerRepository repository;
+    ClientRepository repositoryClient;
+
+    @Autowired
+    ManagerRepository repositoryManager;
 
     public List<Manager> getAll() {
-        return repository.findManagerByStatus(1);
+        return repositoryManager.findManagerByStatus(1);
     }
 
     @Override
     public Manager getOne(int id) {
-        return repository.findManagerByManagerID(id);
+        return repositoryManager.findManagerByManagerID(id);
     }
 
     @Override
@@ -28,13 +33,33 @@ public class ManagerServiceImpl implements ManagerService {
         Manager manager = getOne(managerID);
         manager.setManagerFio(managerFio);
         manager.setPhone(phone);
-        manager.setAssistant(repository.getOne(assistant_id));
-        repository.save(manager);
+        manager.setAssistant(repositoryManager.getOne(assistant_id));
+        repositoryManager.save(manager);
     }
 
     @Override
     public void addManager(String managerFio, String phone, Integer assistant_id) {
-        Manager manager = new Manager(managerFio, phone, repository.getOne(assistant_id));
-        repository.save(manager);
+        Manager manager = new Manager(managerFio, phone, repositoryManager.getOne(assistant_id));
+        repositoryManager.save(manager);
+    }
+
+    @Override
+    public void removeManager(int managerID) {
+        Manager manager = getOne(managerID);
+        try {
+            int assistantID = manager.getAssistant().managerID;
+
+            List<Client> clients = repositoryClient.findClientByManager(manager);
+            Manager assistant = getOne(assistantID);
+            for(Client client: clients){
+                client.setManager(assistant);
+                repositoryClient.save(client);
+            }
+            manager.setStatus(0);
+            repositoryManager.save(manager);
+        } catch (Exception e)
+        {
+            return;
+        }
     }
 }

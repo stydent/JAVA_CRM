@@ -28,7 +28,16 @@ public class Manager {
     @Column(name = "status")
     public Integer status;
 
-    @OneToOne
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = false)
     @JoinColumn (name="assistant_id")
     private Manager assistant;
 

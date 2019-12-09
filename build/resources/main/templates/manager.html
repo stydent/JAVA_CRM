@@ -17,18 +17,37 @@
             <label>Телефон</label> <input type="text" class="form-control" id="phone" th:name="phone" th:value="*{phone}" maxlength="100"/>
             </div>
             <div th:if="${newF}!=true" class="form-group">
-                <label>Заместитель </label> <span th:text="${manager.assistant != null}? ${manager.assistant.managerFio}+ ' ' + ${manager.assistant.phone} :' - ' "></span>
+                <label>Заместитель </label> <span th:text="${manager.assistant.managerID != 0}? ${manager.assistant.managerFio}+ ' ' + ${manager.assistant.phone} :' - ' "></span>
             </div>
             <div class="form-group">
                 <label>Сменить заместителя </label>
                 <select name="assistant_id">
+                    <option value="0">-</option>
                     <option th:each="manager: ${managers}" th:value="${manager.managerID}" th:text="${manager.managerFio}"></option>
                 </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a th:if="${newF}!=true and ${manager.assistant} != null" th:href="@{'/removeManager/{id}'(id=*{managerID})}">Remove Manager</a>
+            <a th:if="${newF}!=true and ${manager.assistant.managerID} != 0" th:href="@{'/removeManager/{id}'(id=*{managerID})}">Remove Manager</a>
         </form>
+
+
+        <b>Клиенты:</b>
+        <table>
+            <tr>
+                <td>Фио</td>
+                <td>Адрес</td>
+                <td></td>
+
+            </tr>
+            <tr th:each="note : ${clients}">
+                <td th:utext="${note.fio}"></td>
+                <td th:text="${note.address}"></td>
+                <td><a th:href="@{'/client/{id}'(id=${note.id})}">Подробнее</a></td>
+
+            </tr>
+        </table>
+
     </div>
 </div>
 </body>

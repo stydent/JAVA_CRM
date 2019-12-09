@@ -46,4 +46,10 @@ public class ClientServiceImpl implements ClientService {
         Client client = new Client(fio, address, repositoryManager.getOne(manager_id));
         repositoryClient.save(client);
     }
+
+    @Override
+    public List<Client> clientByManager(Manager manager) {
+        List<Client> clients = repositoryClient.findClientByManager(manager);
+        return clients;
+    }
 }

@@ -26,7 +26,7 @@
                 </select>
             </div>
             <div th:if="${newF}!=true" class="form-group">
-                <label>Заместитель </label> <span th:text="${client.manager.assistant != null}? ${client.manager.assistant.managerFio}+ ' ' + ${client.manager.assistant.phone} :' - ' "></span>
+                <label>Заместитель </label> <span th:text="${client.manager.assistant.managerID != 0}? ${client.manager.assistant.managerFio}+ ' ' + ${client.manager.assistant.phone} :' - ' "></span>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <a th:if="${newF}!=true" th:href="@{'/removeClient/{id}'(id=*{id})}">Remove Client</a>

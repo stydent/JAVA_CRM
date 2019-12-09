@@ -17,8 +17,8 @@
         <tr th:each="note : ${managers}">
             <td th:utext="${note.managerFio}"></td>
             <td th:text="${note.phone}"></td>
-            <td th:text="${note.assistant != null}? ${note.assistant.managerFio} :' - ' "></td>
-            <td th:text="${note.assistant != null}? ${note.assistant.phone} :' - ' "></td>
+            <td th:text="${note.assistant.managerID==0}?' - ': ${note.assistant.managerFio} "></td>
+            <td th:text="${note.assistant.managerID==0}?' - ': ${note.assistant.phone} "></td>
             <td><a th:href="@{'/manager/{id}'(id=${note.managerID})}">Подробнее</a></td>
 
         </tr>

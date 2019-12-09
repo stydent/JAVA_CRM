@@ -47,8 +47,10 @@ public class ManagerController {
     public String client(@PathVariable("id") int id, Model model){
         Manager manager = servicesManager.getOne(id);
         List<Manager> managers = servicesManager.getAll();
+        List<Client> clients = servicesClient.clientByManager(manager);
         model.addAttribute("manager", manager);
         model.addAttribute("managers", managers);
+        model.addAttribute("clients", clients);
         model.addAttribute("newF", false);
         return "manager";
     }
@@ -70,20 +72,16 @@ public class ManagerController {
     }
 
     @PostMapping("/addManager")
-    public String addClient(@RequestParam String managerFio, @RequestParam String phone, @RequestParam Integer assistant_id){
+    public String addClient(@RequestParam String managerFio, @RequestParam String phone, @RequestParam(defaultValue = "0") Integer assistant_id){
         servicesManager.addManager(managerFio, phone, assistant_id);
         return "redirect:/managers";
     }
 
-/*
-    @GetMapping("/removeClient/{id}")
-    public String removeClient(@PathVariable("id") int id){
-        servicesClient.removeClient(id);
-        return "redirect:/";
+
+    @GetMapping("/removeManager/{id}")
+    public String removeManager(@PathVariable("id") int id){
+        servicesManager.removeManager(id);
+        return "redirect:/managers";
     }
 
-
-
-
-*/
 }

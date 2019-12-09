@@ -3,6 +3,7 @@ package ru.vladlink.crm.entity;
 import ru.vladlink.crm.repository.ManagerRepository;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="clients")
