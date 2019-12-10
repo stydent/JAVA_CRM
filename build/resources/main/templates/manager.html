@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head></head>
+<head th:replace="fragments/head :: head"></head>
 <body>
 <div class="container">
     <div class="container">
+        <div th:replace="fragments/navs :: navs(active='')"></div>
         <form class="form-horizontal" th:object="${manager}" th:action="${newF==true}?'/addManager':'/updateManager'" name="edit_form" id="edit_form"
               method="post" role="form">
             <div class="form-group">
@@ -21,23 +22,26 @@
             </div>
             <div class="form-group">
                 <label>Сменить заместителя </label>
-                <select name="assistant_id">
+                <select name="assistant_id" class="form-control">
                     <option value="0">-</option>
-                    <option th:each="manager: ${managers}" th:value="${manager.managerID}" th:text="${manager.managerFio}"></option>
+                    <option  th:each="m: ${managers}"
+                             th:value="${m.managerID}"
+                             th:text="${m.managerFio}"
+                             th:selected="${manager.assistant.managerID == m.managerID}"></option>
                 </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a th:if="${newF}!=true and ${manager.assistant.managerID} != 0" th:href="@{'/removeManager/{id}'(id=*{managerID})}">Remove Manager</a>
+            <a class="btn btn-outline-danger" th:if="${newF}!=true and ${manager.assistant.managerID} != 0" th:href="@{'/removeManager/{id}'(id=*{managerID})}">Remove Manager</a>
         </form>
 
-
+        <br />
         <b>Клиенты:</b>
-        <table>
+        <table class="table">
             <tr>
-                <td>Фио</td>
-                <td>Адрес</td>
-                <td></td>
+                <th>Фио</th>
+                <th>Адрес</th>
+                <th></th>
 
             </tr>
             <tr th:each="note : ${clients}">

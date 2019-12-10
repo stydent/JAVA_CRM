@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="navs">
+    <br>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a th:class="${active=='/'}?'nav-link active':'nav-link'" href="/">Список клиентов</a>
+        </li>
+        <li class="nav-item">
+            <a th:class="${active=='managers'}?'nav-link active':'nav-link'" href="/managers/">Список менеджеров</a>
+        </li>
+    </ul>
+    <br>
+</div>
+</html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head></head>
+<head th:replace="fragments/head :: head"></head>
 <body>
 <div class="container">
-    <p><b>Список клиентов</b> <a href="/managers/">Список менеджеров</a></p>
-    <table>
+    <div th:replace="fragments/navs :: navs(active='/')"></div>
+    <table class="table">
         <tr>
-            <td>Фио</td>
-            <td>Адрес</td>
-            <td>Менеджер</td>
-            <td>Заместитель</td>
-            <td></td>
+            <th>Фио</th>
+            <th>Адрес</th>
+            <th>Менеджер</th>
+            <th>Заместитель</th>
+            <th></th>
 
         </tr>
         <tr th:each="note : ${clients}">

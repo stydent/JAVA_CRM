@@ -46,9 +46,9 @@ public class ManagerServiceImpl implements ManagerService {
     @Override
     public void removeManager(int managerID) {
         Manager manager = getOne(managerID);
-        try {
-            int assistantID = manager.getAssistant().managerID;
 
+        int assistantID = manager.getAssistant().getManagerID();
+        if(assistantID!=0){
             List<Client> clients = repositoryClient.findClientByManager(manager);
             Manager assistant = getOne(assistantID);
             for(Client client: clients){
@@ -57,9 +57,9 @@ public class ManagerServiceImpl implements ManagerService {
             }
             manager.setStatus(0);
             repositoryManager.save(manager);
-        } catch (Exception e)
-        {
-            return;
         }
+        else
+            return;
+
     }
 }
