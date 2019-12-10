@@ -24,7 +24,7 @@
                 <label>Сменить заместителя </label>
                 <select name="assistant_id" class="form-control">
                     <option value="0">-</option>
-                    <option  th:each="m: ${managers}"
+                    <option th:if="${newF}!=true" th:each="m: ${managers}"
                              th:value="${m.managerID}"
                              th:text="${m.managerFio}"
                              th:selected="${manager.assistant.managerID == m.managerID}"></option>
