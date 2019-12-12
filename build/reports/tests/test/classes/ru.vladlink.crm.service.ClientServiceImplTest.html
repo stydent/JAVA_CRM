@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.010s</div>
+<div class="counter">0.969s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,119 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
+<a href="#tab1">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="removeClient()"></a>
-<h3 class="failures">removeClient()</h3>
-<span class="code">
-<pre>java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at ru.vladlink.crm.service.ClientServiceImplTest.removeClient(ClientServiceImplTest.java:21)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:675)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:125)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:132)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:124)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:74)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:104)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:62)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:43)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:35)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:202)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:198)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1378)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1378)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:102)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:82)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:78)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:844)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -184,32 +78,32 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">removeClient()</td>
-<td class="failures">1.010s</td>
-<td class="failures">failed</td>
+<td class="success">removeClient()</td>
+<td class="success">0.969s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>23:31:51.438 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-23:31:51.515 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-23:31:51.593 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ru.vladlink.crm.service.ClientServiceImplTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-23:31:51.662 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.vladlink.crm.service.ClientServiceImplTest], using SpringBootContextLoader
-23:31:51.677 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ru.vladlink.crm.service.ClientServiceImplTest]: class path resource [ru/vladlink/crm/service/ClientServiceImplTest-context.xml] does not exist
-23:31:51.679 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ru.vladlink.crm.service.ClientServiceImplTest]: class path resource [ru/vladlink/crm/service/ClientServiceImplTestContext.groovy] does not exist
-23:31:51.679 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [ru.vladlink.crm.service.ClientServiceImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-23:31:51.682 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ru.vladlink.crm.service.ClientServiceImplTest]: ClientServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-23:31:51.811 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ru.vladlink.crm.service.ClientServiceImplTest]
-23:31:52.021 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Public\IdeaProjects\JAVA_CRM\build\classes\java\main\ru\vladlink\crm\CrmApplication.class]
-23:31:52.023 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ru.vladlink.crm.CrmApplication for test class ru.vladlink.crm.service.ClientServiceImplTest
-23:31:52.351 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [ru.vladlink.crm.service.ClientServiceImplTest]: using defaults.
-23:31:52.352 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-23:31:52.416 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f338a82, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3040ffd5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4ef519ea, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@677b873d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@54af76ca, org.springframework.test.context.transaction.TransactionalTestExecutionListener@63a685dd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5fafa0a, org.springframework.test.context.event.EventPublishingTestExecutionListener@3e03d7e7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@11b5ffcb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@466a184d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@14929020, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@348ed1ba, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@a7b3b47]
-23:31:52.429 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@280c0d8 testClass = ClientServiceImplTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@423f51fe testClass = ClientServiceImplTest, locations = '{}', classes = '{class ru.vladlink.crm.CrmApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@58d2d6f3, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@231ed794, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7115aef, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4228e2fa], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-23:31:52.524 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
-LOGBACK: No context given for c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1941694749
+<pre>20:39:35.650 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:39:35.697 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:39:35.772 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ru.vladlink.crm.service.ClientServiceImplTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:39:35.822 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.vladlink.crm.service.ClientServiceImplTest], using SpringBootContextLoader
+20:39:35.834 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ru.vladlink.crm.service.ClientServiceImplTest]: class path resource [ru/vladlink/crm/service/ClientServiceImplTest-context.xml] does not exist
+20:39:35.835 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ru.vladlink.crm.service.ClientServiceImplTest]: class path resource [ru/vladlink/crm/service/ClientServiceImplTestContext.groovy] does not exist
+20:39:35.836 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [ru.vladlink.crm.service.ClientServiceImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:39:35.838 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ru.vladlink.crm.service.ClientServiceImplTest]: ClientServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:39:35.942 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ru.vladlink.crm.service.ClientServiceImplTest]
+20:39:36.129 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Public\IdeaProjects\JAVA_CRM\build\classes\java\main\ru\vladlink\crm\CrmApplication.class]
+20:39:36.131 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ru.vladlink.crm.CrmApplication for test class ru.vladlink.crm.service.ClientServiceImplTest
+20:39:36.442 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [ru.vladlink.crm.service.ClientServiceImplTest]: using defaults.
+20:39:36.443 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+20:39:36.509 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6b239d5e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@77f36025, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@571c00a0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@b02351e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7cbc804d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@10a225b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@270c3e03, org.springframework.test.context.event.EventPublishingTestExecutionListener@3d3c4539, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@259a143b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@241402a2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@622edc05, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3de458f4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@482aa8bf]
+20:39:36.519 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@16ae378f testClass = ClientServiceImplTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@abf776a testClass = ClientServiceImplTest, locations = '{}', classes = '{class ru.vladlink.crm.CrmApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@56a61015, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@138e46cb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@58e8d1a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@12f49a8b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+20:39:36.630 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+LOGBACK: No context given for c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@704918800
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -219,24 +113,24 @@ LOGBACK: No context given for c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.1.RELEASE)
 
-&quot;2019-12-11 23:31:53 - Starting ClientServiceImplTest on DESKTOP-6RHDR3O with PID 1064 (started by Тесак in C:\Users\Public\IdeaProjects\JAVA_CRM)
-&quot;&quot;2019-12-11 23:31:53 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-&quot;&quot;2019-12-11 23:31:53 - No active profile set, falling back to default profiles: default
-&quot;&quot;2019-12-11 23:31:56 - Bootstrapping Spring Data repositories in DEFAULT mode.
-&quot;&quot;2019-12-11 23:31:57 - Finished Spring Data repository scanning in 191ms. Found 2 repository interfaces.
-&quot;&quot;2019-12-11 23:31:58 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-&quot;&quot;2019-12-11 23:31:58 - HikariPool-1 - Starting...
-&quot;&quot;2019-12-11 23:31:58 - HikariPool-1 - Start completed.
-&quot;&quot;2019-12-11 23:31:59 - HHH000204: Processing PersistenceUnitInfo [name: default]
-&quot;&quot;2019-12-11 23:31:59 - HHH000412: Hibernate Core {5.4.8.Final}
-&quot;&quot;2019-12-11 23:31:59 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-&quot;&quot;2019-12-11 23:32:00 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-&quot;&quot;2019-12-11 23:32:02 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-&quot;&quot;2019-12-11 23:32:02 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-&quot;&quot;2019-12-11 23:32:04 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-&quot;&quot;2019-12-11 23:32:04 - Initializing ExecutorService 'applicationTaskExecutor'
-&quot;&quot;2019-12-11 23:32:05 - Adding welcome page template: index
-&quot;&quot;2019-12-11 23:32:06 - Started ClientServiceImplTest in 13.443 seconds (JVM running for 18.001)
+&quot;2019-12-12 20:39:37 - Starting ClientServiceImplTest on DESKTOP-6RHDR3O with PID 6808 (started by Тесак in C:\Users\Public\IdeaProjects\JAVA_CRM)
+&quot;&quot;2019-12-12 20:39:37 - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+&quot;&quot;2019-12-12 20:39:37 - No active profile set, falling back to default profiles: default
+&quot;&quot;2019-12-12 20:39:39 - Bootstrapping Spring Data repositories in DEFAULT mode.
+&quot;&quot;2019-12-12 20:39:39 - Finished Spring Data repository scanning in 160ms. Found 2 repository interfaces.
+&quot;&quot;2019-12-12 20:39:40 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+&quot;&quot;2019-12-12 20:39:41 - HikariPool-1 - Starting...
+&quot;&quot;2019-12-12 20:39:41 - HikariPool-1 - Start completed.
+&quot;&quot;2019-12-12 20:39:41 - HHH000204: Processing PersistenceUnitInfo [name: default]
+&quot;&quot;2019-12-12 20:39:42 - HHH000412: Hibernate Core {5.4.8.Final}
+&quot;&quot;2019-12-12 20:39:42 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+&quot;&quot;2019-12-12 20:39:43 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+&quot;&quot;2019-12-12 20:39:45 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+&quot;&quot;2019-12-12 20:39:45 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+&quot;&quot;2019-12-12 20:39:47 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+&quot;&quot;2019-12-12 20:39:47 - Initializing ExecutorService 'applicationTaskExecutor'
+&quot;&quot;2019-12-12 20:39:48 - Adding welcome page template: index
+&quot;&quot;2019-12-12 20:39:49 - Started ClientServiceImplTest in 12.391 seconds (JVM running for 15.955)
 &quot;</pre>
 </span>
 </div>
@@ -248,7 +142,7 @@ LOGBACK: No context given for c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.6.2</a> at 11 дек. 2019 г., 23:32:07</p>
+<a href="http://www.gradle.org">Gradle 5.6.2</a> at 12 дек. 2019 г., 20:39:50</p>
 </div>
 </div>
 </body>
