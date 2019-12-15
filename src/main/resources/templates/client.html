@@ -6,7 +6,7 @@
 <div class="container">
     <div class="container">
         <div th:replace="fragments/navs :: navs(active='')"></div>
-        <form class="form-horizontal" th:object="${client}" th:action="${newF==true}?'/addClient':'/updateClient'" name="edit_form" id="edit_form"
+        <form class="form-horizontal" th:if="${client}!=null" th:object="${client}" th:action="${newF==true}?'/addClient':'/updateClient'" name="edit_form" id="edit_form"
               method="post" role="form">
             <div class="form-group">
                 <input type="hidden" id="id" th:name="id" th:value="*{id}"/>

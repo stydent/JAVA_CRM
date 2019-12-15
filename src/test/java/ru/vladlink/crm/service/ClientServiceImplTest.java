@@ -16,8 +16,11 @@ class ClientServiceImplTest {
     private ClientService clientService;
     @Test
     void removeClient() {
-        Client client = clientService.getOne(10);
-        clientService.removeClient(client.getId());
-        Assert.assertEquals("0", client.status.toString());
+        Client client = clientService.getOne(8);
+        if(client!=null){
+            clientService.removeClient(client.getId());
+            Assert.assertEquals(0,client.getStatus().longValue());
+        }
+
     }
 }

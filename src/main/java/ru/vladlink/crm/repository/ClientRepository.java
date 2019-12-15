@@ -16,6 +16,6 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
     //List<Client> getAll();
     List<Client> findClientByStatus(Integer status);
     Client findClientById(Integer id);
-    List<Client> findClientByManager(Manager manager);
+    List<Client> findClientByManagerAndStatus(Manager manager, Integer status);
 
 }
